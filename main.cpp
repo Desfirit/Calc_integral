@@ -4,6 +4,7 @@
 #include <time.h>
 #include <algorithm>
 #include <iterator>
+#include <iomanip>
 
 using namespace std;
 
@@ -129,6 +130,8 @@ int main()
     transform(serias.begin(),serias.end(),serias.begin(), [&tester,selections](auto& c){
         return vector<double>(tester.make_tests(selections));
     });
+
+    cout << fixed << setprecision(10);
 
     print_serias(serias);
 
